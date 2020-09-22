@@ -63,8 +63,8 @@ function update_current_git_vars() {
 
 git_super_status() {
 	precmd_update_git_vars
-	GIT_CHANGED_OR_UNTRACKED=$(expr $GIT_CHANGED + $GIT_UNTRACKED)
     if [ -n "$__CURRENT_GIT_STATUS" ]; then
+      GIT_CHANGED_OR_UNTRACKED=$(expr $GIT_CHANGED + $GIT_UNTRACKED)
 	  STATUS="$ZSH_THEME_GIT_PROMPT_COLOR$ZSH_THEME_GIT_PROMPT_PREFIX$GIT_BRANCH"
 	  if [ "$GIT_STAGED" -ne "0" ]; then
 		  STATUS="$STATUS$ZSH_THEME_GIT_PROMPT_STAGED$GIT_STAGED"
